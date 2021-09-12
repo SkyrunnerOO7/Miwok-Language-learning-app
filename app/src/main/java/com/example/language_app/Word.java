@@ -2,27 +2,38 @@ package com.example.language_app;
 
 public class Word {
 
+    //gives english words
     private String mDefaultTranslation;
 
+    //gives miwok words
     private String mMiwokTranslation;
 
+    //gives image int
     private int mImageResourceId = NO_IMAGE_PROVIDED;
-
     private static  final int NO_IMAGE_PROVIDED = -1;
+
+    //gives audio file
+    private int mAudioResourceId;
+
 
 
     /*
     * Constructor
     * */
-    public Word(String defaultTranslation,String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
-    public Word(String defaultTranslation,String miwokTranslation,int imageResourceId){
+
+    /*
+     * takes english, miwok, image and audio file */
+    public Word(String defaultTranslation,String miwokTranslation,int imageResourceId, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     /*
@@ -44,5 +55,8 @@ public class Word {
     public boolean hasImage(){
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+    //gets the audio
+    public int getmAudioResourceId(){return mAudioResourceId; }
 
 }
